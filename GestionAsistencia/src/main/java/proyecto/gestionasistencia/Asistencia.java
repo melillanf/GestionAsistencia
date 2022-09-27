@@ -10,8 +10,8 @@ import java.util.*;
  * @author melil
  */
 public class Asistencia {
-    HashMap <String,Boolean[]> registro;//K: mes - V: array mes
-    HashMap <String, String[]> retiros;
+    private HashMap <String,Boolean[]> registro;//K: mes - V: array mes
+    private HashMap <String, String[]> retiros;
         
     public Asistencia(){
         Boolean[] array = new Boolean[31];
@@ -33,13 +33,15 @@ public class Asistencia {
         this.registro = registro;
     }
 
-    public HashMap<String, String[]> getRetiros() {
+    public HashMap getRetiros() {
         return retiros;
     }
 
-    public void setRetiros(HashMap<String, String[]> retiros) {
+    public void setRetiros(HashMap retiros) {
         this.retiros = retiros;
     }
+
+   
     
     
-}
+}//Fin clase

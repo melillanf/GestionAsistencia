@@ -11,7 +11,7 @@ import java.io.*;
  * @author melil
  */
 public class Main {
-    public static void main(String[] args)throws IOException{
+    public static void main(String[] args){
         int op=100;
         System.out.println("");
         Colegio administracion = new Colegio();
@@ -19,6 +19,7 @@ public class Main {
         int rut1 = 21103133;
         String name2 = "God Usopp";
         int rut2 = 13131031;
+        try{
         administracion.agregarAlumno(rut2, name2);
         administracion.agregarAlumno(rut1, name1);
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
@@ -42,13 +43,19 @@ public class Main {
                     break;
                 }
                 case 3:{
-                    for(Alumno aux:administracion.alumnado.values()){
-                        System.out.println("Nombre: "+aux.getName()+"Rut: "+aux.getRut()+"\n");
+                    HashMap auxMap = administracion.getAlumnado();
+                    for(Object aux: auxMap.values()){
+                        Alumno actual = (Alumno) aux;
+                        System.out.println("Nombre: "+actual.getName()+"Rut: "+actual.getRut()+"\n");
                     }
                     break;
                 }
                     
             }
         }while(op!=0);
+        }
+        catch(IOException ewe){
+            ewe.printStackTrace();
+        }
     }
 }

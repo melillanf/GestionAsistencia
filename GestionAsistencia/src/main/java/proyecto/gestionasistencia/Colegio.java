@@ -11,26 +11,25 @@ import java.io.*;
  * @author melil
  */
 public class Colegio {
-    HashMap<Integer,Alumno> alumnado = new HashMap<>();
-
-    public HashMap<Integer, Alumno> getAlumnado() {
-        return alumnado;
-    }
-
-    public void setAlumnado(HashMap<Integer, Alumno> alumnado) {
-        this.alumnado = alumnado;
-    }
+    private HashMap<Integer,Alumno> alumnado = new HashMap<>();
     
     public void agregarAlumno(Integer rut, String name )throws IOException{
         Alumno nuevo = new Alumno(name,(int)rut);
         alumnado.put(rut, nuevo);
     }
-    public void agregarAlumno() throws IOException{
+    public void agregarAlumno(){
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese el nombre:\n");
-        String name = lector.readLine();
+        int rut = 0;
+        String name = new String();
+        try{
+        name = lector.readLine();
         System.out.println("Ingrese el rut:\n");
-        int rut = Integer.parseInt(lector.readLine());
+        rut = Integer.parseInt(lector.readLine());
+        }
+        catch(IOException ewe){
+            ewe.printStackTrace();
+        }
         Alumno nuevo = new Alumno(name, rut);
         alumnado.put(rut, nuevo);
     }
@@ -51,5 +50,15 @@ public class Colegio {
        if(op == 1)array[dia]=true;
         System.err.println("Se registro la asistencia\n-----------------------\n");
     }
+
+    public HashMap<Integer, Alumno> getAlumnado() {
+        return alumnado;
+    }
+
+    public void setAlumnado(HashMap<Integer, Alumno> alumnado) {
+        this.alumnado = alumnado;
+    }
+    
+    
 }
     
