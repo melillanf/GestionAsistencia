@@ -18,37 +18,29 @@ public class Colegio {
         alumnado.put(rut, nuevo);
     }
     public void agregarAlumno(){
-        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Ingrese el nombre:\n");
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
         int rut = 0;
         String name = new String();
+
         try{
-        name = lector.readLine();
-        System.out.println("Ingrese el rut:\n");
-        rut = Integer.parseInt(lector.readLine());
+            
+            System.out.println("Ingrese el nombre:\n");
+            name = lector.readLine();
+            System.out.println("Ingrese el rut:\n");
+            rut = Integer.parseInt(lector.readLine());
         }
         catch(IOException ewe){
             ewe.printStackTrace();
         }
+        
         Alumno nuevo = new Alumno(name, rut);
         alumnado.put(rut, nuevo);
     }
     
-    public void registrarAsistencia(int rut)throws IOException{
-       BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-       Asistencia registrar = alumnado.get(rut).getRegistro();
-       System.out.println("Ingrese el mes\n");
-       String mes = lector.readLine();
-       System.out.println("Ingrese el dia\n");
-       int dia = Integer.parseInt(lector.readLine());
-       Boolean[] array = new Boolean[31];
-        array = registrar.getRegistro().get(mes);
-       dia--;
-        System.out.println("Ingrese una opcion\n 0 = Inasistencia | 1 = Asistencia \n");
-       int op=Integer.parseInt(lector.readLine());
-       if(op == 0)array[dia]=false;
-       if(op == 1)array[dia]=true;
-        System.err.println("Se registro la asistencia\n-----------------------\n");
+    public void registrarAsistencia()throws IOException{
+       
+        //Desde aqui se pasa la informacion del alumno, se obtiene el rut por consola
+        //y se busca en la coleccion, en caso de encontrarse, lo pasa al metodo agrega
     }
 
     public HashMap<Integer, Alumno> getAlumnado() {

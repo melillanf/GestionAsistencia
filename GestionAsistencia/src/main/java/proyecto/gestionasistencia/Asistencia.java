@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package proyecto.gestionasistencia;
+import java.io.*;
 import java.util.*;
 /**
  *
@@ -33,14 +34,13 @@ public class Asistencia {
         this.registro = registro;
     }
 
-    public HashMap getRetiros() {
+    public HashMap<String, String[]> getRetiros() {
         return retiros;
     }
 
-    public void setRetiros(HashMap retiros) {
+    public void setRetiros(HashMap<String, String[]> retiros) {
         this.retiros = retiros;
     }
-
    
     
     
