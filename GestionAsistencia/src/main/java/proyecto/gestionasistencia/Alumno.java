@@ -45,9 +45,8 @@ public class Alumno {
         this.historial = historial;
     }
     
-    public boolean registrarAsistencia(){
+    public boolean registrarAsistencia(){//Metodo usado para ingresar por teclado
        
-      
        int dia = 99;
        String mes = new String();
         try {
@@ -56,31 +55,23 @@ public class Alumno {
             mes = lector.readLine();
             System.out.println("Ingrese el dia\n");
             dia = Integer.parseInt(lector.readLine());
-            Boolean[] array = new Boolean[31];//crea un arreglo auxiliar booleano
-            array = historial.getRegistro().get(mes);//se le asigna el arreglo correspondiente al mes solicitado
             dia--;
             System.out.println("Ingrese una opcion\n 0 = Inasistencia | 1 = Asistencia \n");
-            int op=Integer.parseInt(lector.readLine());
-            if(op == 0)array[dia]=false;
-            if(op == 1)array[dia]=true;
-            historial.getRegistro().replace(mes, array);//version actualizada del array de asistencias reemplaza la antigua
-            System.err.println("Se registro la asistencia\n-----------------------\n");
+            int asistio=Integer.parseInt(lector.readLine());
+            historial.inscribirAsistencia(dia, asistio, mes);
+            System.out.println("Se registro la asistencia\n-----------------------\n");
             return true;
+        
         } 
-        catch (IOException ex) {
+        catch (IOException ex){
             ex.printStackTrace();
-            return false;
         }
-       
+       return false;
     }
     
-   public void registrarAsistencia(int dia, String mes, boolean asiste){
+   public void registrarAsistencia(int dia, int asiste, String mes){//Metodo usado para ingresar datos iniciales
        
-       Boolean[] array = new Boolean[31];
-       array = historial.getRegistro().get(mes);
-       if(!asiste)array[dia]=false;
-       if(asiste)array[dia]=true;
-       historial.getRegistro().replace(mes, array);//version actualizada del array de asistencias reemplaza la antigua
+       historial.inscribirAsistencia(dia, asiste, mes);
        
    }
     

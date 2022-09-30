@@ -25,7 +25,16 @@ public class Asistencia {
             
         }
     }
-
+    public void inscribirAsistencia(int dia, int asistio, String mes){
+        
+        Boolean[] array = new Boolean[31];//crea un arreglo auxiliar booleano
+        array = registro.get(mes);//se le asigna el arreglo correspondiente al mes solicitado
+        if(asistio == 0)array[dia]=false;
+        if(asistio == 1)array[dia]=true;
+        registro.replace(mes, array);//actualiza el array en el registro
+        
+        
+    }
     public HashMap<String, Boolean[]> getRegistro() {
         return registro;
     }

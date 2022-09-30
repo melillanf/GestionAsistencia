@@ -37,10 +37,10 @@ public class Colegio {
         alumnado.put(rut, nuevo);
     }
     
-    public void registrarAsistencia()throws IOException{
+    public void registrarAsistencia(int rut){
        
-        //Desde aqui se pasa la informacion del alumno, se obtiene el rut por consola
-        //y se busca en la coleccion, en caso de encontrarse, lo pasa al metodo agrega
+        Alumno aux = alumnado.get(rut);
+        aux.registrarAsistencia();
     }
 
     public HashMap<Integer, Alumno> getAlumnado() {
