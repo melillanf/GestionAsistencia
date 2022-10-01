@@ -52,5 +52,31 @@ public class Colegio {
     }
     
     
+    //funcion para eliminar alumno
+    public void eliminarAlumno(Integer rut, String name){
+        Alumno eliminado = new Alumno(name,(int)rut);
+        alumnado.remove(rut, eliminado);
+    }
+    
+    public void eliminarAlumno(){
+         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
+        int rut = 0;
+        String name = new String();
+
+        try{
+            
+            System.out.println("Ingrese el nombre que desea eliminar:\n");
+            name = lector.readLine();
+            System.out.println("Ingrese el rut del alumno:\n");
+            rut = Integer.parseInt(lector.readLine());
+        }
+        catch(IOException ewe){
+            ewe.printStackTrace();
+        }
+       
+        alumnado.remove(rut);
+    
+    }
+    
 }
     

@@ -31,25 +31,30 @@ public class Main {
             System.out.println("----------------------------------\n");
             op = lector.read();
             
-            switch(op){
-                case 1:{
-                    administracion.agregarAlumno();//implementado en la clase colegio
-                    break;
-            }
-                case 2:{
-                    System.out.println("Ingrese el rut del alumno\n");
-                    int rut = Integer.parseInt(lector.readLine());
-                    administracion.registrarAsistencia(rut);
-                    break;
-                }
-                case 3:{
-                    HashMap auxMap = administracion.getAlumnado();
-                    for(Object aux: auxMap.values()){
-                        Alumno actual = (Alumno) aux;
-                        System.out.println("Nombre: "+actual.getName()+"Rut: "+actual.getRut()+"\n");
-                    }
-                    break;
-                }
+            switch(op) {
+                            case 1:{
+                                administracion.agregarAlumno();//implementado en la clase colegio
+                                break;
+                            }
+                                case 2:{
+                                    System.out.println("Ingrese el rut del alumno\n");
+                                    int rut = Integer.parseInt(lector.readLine());
+                                    administracion.registrarAsistencia(rut);
+                                    break;
+                                }
+                                    case 3:{
+                                     HashMap auxMap = administracion.getAlumnado();
+                                        for(Object aux: auxMap.values()){
+                                        Alumno actual = (Alumno) aux;
+                                        System.out.println("Nombre: "+actual.getName()+"Rut: "+actual.getRut()+"\n");
+                                        }
+                                    }
+                                        case 4:{
+                                            administracion.eliminarAlumno();//implementado en la clase colegio
+                                        }
+
+                                        break;
+                        }
                     
             }
         }while(op!=0);

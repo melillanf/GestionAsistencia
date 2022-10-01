@@ -25,6 +25,8 @@ public class Asistencia {
             
         }
     }
+    
+    //funcion para ingresar asistencia al hashmap
     public void inscribirAsistencia(int dia, int asistio, String mes){
         
         Boolean[] array = new Boolean[31];//crea un arreglo auxiliar booleano
@@ -51,6 +53,9 @@ public class Asistencia {
         this.retiros = retiros;
     }
    
+    //funcion para modificar asistencia
+    public void modificarAsistencia(int dia, int asistio, String mes){
     
+    }
     
 }//Fin clase
