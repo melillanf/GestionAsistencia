@@ -51,11 +51,5 @@ public class Asistencia {
 
     public void setRetiros(HashMap<String, String[]> retiros) {
         this.retiros = retiros;
-    }
-   
-    //funcion para modificar asistencia
-    public void modificarAsistencia(int dia, int asistio, String mes){
-    
-    }
-    
+    } 
 }//Fin clase

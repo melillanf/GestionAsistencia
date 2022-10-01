@@ -26,32 +26,50 @@ public class Main {
         do{
             System.out.println("Elija una opcion:\n");
             System.out.println("1. Agregar alumno \n");
-            System.out.println("2. Registrar asistencia\n");
-            System.out.println("3. Mostrar alumnos\n");
+            System.out.println("2. Registrar asistencia \n");
+            System.out.println("3. Mostrar alumnos \n");
+            System.out.println("4. eliminar alumno \n");
+            System.out.println("5. Modificar asistencia \n");
             System.out.println("----------------------------------\n");
             op = lector.read();
             
             switch(op) {
+                            //agregar alumno
                             case 1:{
+                                System.out.println("--AGREGAR ALUMNO NUEVO--\n");
                                 administracion.agregarAlumno();//implementado en la clase colegio
                                 break;
                             }
+                                //registrar Asistencia
                                 case 2:{
+                                    System.out.println("--REGISTRO DE ASISTENCIA--\n");
                                     System.out.println("Ingrese el rut del alumno\n");
                                     int rut = Integer.parseInt(lector.readLine());
                                     administracion.registrarAsistencia(rut);
                                     break;
                                 }
+                                    //mostrar alumnos
                                     case 3:{
+                                        System.out.println("3. TODOS LOS ALUMNOS");
                                      HashMap auxMap = administracion.getAlumnado();
                                         for(Object aux: auxMap.values()){
                                         Alumno actual = (Alumno) aux;
                                         System.out.println("Nombre: "+actual.getName()+"Rut: "+actual.getRut()+"\n");
                                         }
                                     }
+                                        //elimina alumno
                                         case 4:{
+                                            System.out.println("--ELIMINACION DE ALUMNO--\n");
                                             administracion.eliminarAlumno();//implementado en la clase colegio
                                         }
+                                            //modifica asistencia de un alumno
+                                            case 5:{
+                                                 System.out.println("--MODIFICACION DE ASISTENCIA--\n");
+                                                 System.out.println("Ingrese el rut del alumno\n");
+                                                int rut = Integer.parseInt(lector.readLine());
+                                                administracion.modificarAsistencia(rut);
+                                                break;                                           
+                                            }
 
                                         break;
                         }

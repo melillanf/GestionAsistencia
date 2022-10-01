@@ -64,10 +64,7 @@ public class Colegio {
         String name = new String();
 
         try{
-            
-            System.out.println("Ingrese el nombre que desea eliminar:\n");
-            name = lector.readLine();
-            System.out.println("Ingrese el rut del alumno:\n");
+            System.out.println("Ingrese el rut del alumno que desea eliminar:\n");
             rut = Integer.parseInt(lector.readLine());
         }
         catch(IOException ewe){
@@ -75,8 +72,12 @@ public class Colegio {
         }
        
         alumnado.remove(rut);
-    
     }
     
-}
-    
+    //funcion para modificar asistencia
+
+    public void modificarAsistencia(int rut){
+    Alumno aux = alumnado.get(rut);
+        aux.modificarAsistencia();
+    }
+}   
