@@ -61,8 +61,6 @@ public class Colegio {
     public void eliminarAlumno(){
          BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
         int rut = 0;
-        String name = new String();
-
         try{
             System.out.println("Ingrese el rut del alumno que desea eliminar:\n");
             rut = Integer.parseInt(lector.readLine());

@@ -11,32 +11,13 @@ import java.io.*;
  *
  * @author melil
  */
-public class Alumno {
-    private String name;
-    private int rut;
-    private Asistencia historial = new Asistencia();
+public class Alumno extends Persona{
+    private Asistencia historial ;
 
     public Alumno(String name, int rut) {
-        this.name = name;
-        this.rut = rut;
+        super(name,rut);
+        historial = new Asistencia();
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getRut() {
-        return rut;
-    }
-
-    public void setRut(int rut) {
-        this.rut = rut;
-    }
-
     public Asistencia getHistorial() {
         return historial;
     }
@@ -44,7 +25,12 @@ public class Alumno {
     public void setHistorial(Asistencia historial) {
         this.historial = historial;
     }
-    
+    //Override
+    public void mostrarInfo(){
+        System.out.println("Nombre: "+getName()+"\n");
+        System.out.println("RUT: "+getRut()+"\n");
+        historial.infoAsistidos();
+    }
     public boolean registrarAsistencia(){//Metodo usado para ingresar por teclado la asistencia
        
        int dia = 99;
