@@ -8,7 +8,8 @@ import java.util.*;
 import java.io.*;
 /**
  *
- * @author melil
+  * @author Fernadno Melillan
+  * @author Esteban Rodriguez
  */
 public class Colegio {
     private HashMap<Integer,Alumno> alumnado = new HashMap<>();
@@ -62,7 +63,7 @@ public class Colegio {
          BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
         int rut = 0;
         try{
-            System.out.println("Ingrese el rut del alumno que desea eliminar:\n");
+            System.out.println("Ingrese el rut del alumno a eliminar:\n");
             rut = Integer.parseInt(lector.readLine());
         }
         catch(IOException ewe){
@@ -70,6 +71,7 @@ public class Colegio {
         }
        
         alumnado.remove(rut);
+        System.out.println("Se elimino el alumno correctamente\n------------------------\n");
     }
     
     //funcion para modificar asistencia

@@ -8,7 +8,8 @@ import java.util.*;
 import java.io.*;
 /**
  *
- * @author melil
+  * @author Fernadno Melillan
+  * @author Esteban Rodriguez
  */
 public class Main {
     public static void main(String[] args){
@@ -26,12 +27,14 @@ public class Main {
             BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
             do{
                 System.out.println("Elija una opcion:\n");
+                System.out.println("------------------------------------\n");
                 System.out.println("1. Agregar alumno \n");
                 System.out.println("2. Registrar asistencia \n");
                 System.out.println("3. Mostrar alumnos \n");
                 System.out.println("4. eliminar alumno \n");
                 System.out.println("5. Modificar asistencia \n");
-                System.out.println("----------------------------------\n");
+                System.out.println("6. Revisar asistencia por dia y mes");
+                System.out.println("------------------------------------\n");
                 op = lector.read();
             
                 switch(op) {
@@ -51,25 +54,32 @@ public class Main {
                     }
                     //mostrar alumnos
                     case 3:{
-                        System.out.println("3. TODOS LOS ALUMNOS");
+                        System.out.println("--TODOS LOS ALUMNOS--");
                         HashMap auxMap = administracion.getAlumnado();
                         for(Object aux: auxMap.values()){
                             Alumno actual = (Alumno) aux;
                             System.out.println("Nombre: "+actual.getName()+"Rut: "+actual.getRut()+"\n");
                         }
+                        break;
                     }
                     //elimina alumno
                     case 4:{
                         System.out.println("--ELIMINACION DE ALUMNO--\n");
                             administracion.eliminarAlumno();//implementado en la clase colegio
+                            break;
                     }
                     //modifica asistencia de un alumno
                     case 5:{
                         System.out.println("--MODIFICACION DE ASISTENCIA--\n");
-                        System.out.println("Ingrese el rut del alumno\n");
+                        System.out.println("Ingrese el RUT del alumno\n");
                         int rut = Integer.parseInt(lector.readLine());
                         administracion.modificarAsistencia(rut);
                         break;                                           
+                    }
+                    //ver asistencia por dia y mes determinado
+                    case 6:{
+                        System.out.println("--Revisar asistencia");
+                        break;
                     }
                 }     
         }while(op!=0);

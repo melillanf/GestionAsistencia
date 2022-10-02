@@ -7,7 +7,8 @@ package proyecto.gestionasistencia;
 
 /**
  *
- * @author melil
+  * @author Fernadno Melillan
+  * @author Esteban Rodriguez
  */
 public class Persona {
     private String name;

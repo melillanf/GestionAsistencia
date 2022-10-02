@@ -9,7 +9,8 @@ import java.io.*;
 
 /**
  *
- * @author melil
+  * @author Fernadno Melillan
+  * @author Esteban Rodriguez
  */
 public class Alumno extends Persona{
     private Asistencia historial ;
@@ -52,6 +53,7 @@ public class Alumno extends Persona{
         catch (IOException ex){
             ex.printStackTrace();
         }
+        System.out.println("No se registro correctamente :( \n------------------------\n");
        return false;
     }
     
@@ -66,24 +68,23 @@ public class Alumno extends Persona{
            String mes = new String();
             try {
                 BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-                System.out.println("Mes a modificar\n");
-                System.out.println("Ingrese el mes\n");
+                System.out.println("Ingrese Mes a modificar\n");
                 mes = lector.readLine();
-                System.out.println("Dia a modificar\n");
-                System.out.println("Ingrese el dia\n");
+                System.out.println("Ingrese Día a modificar\n");
                 dia = Integer.parseInt(lector.readLine());
                 dia--;
                 System.out.println("Ingrese la nueva asistencia de su alumno");
                 System.out.println("Ingrese una opcion\n 0 = Inasistencia | 1 = Asistencia \n");
                 int asistio=Integer.parseInt(lector.readLine());
                 historial.inscribirAsistencia(dia, asistio, mes);
-                System.out.println("Se modifico correctamente la asistencia\n-----------------------\n");
+                System.out.println("Se modifico correctamente la asistencia\n------------------------\n");
                 return true;
 
             } 
             catch (IOException ex){
                 ex.printStackTrace();
             }
+            System.out.println("No se modifico nada :( \n------------------------\n");
            return false;
     }
     
