@@ -80,4 +80,18 @@ public class Colegio {
     Alumno aux = alumnado.get(rut);
         aux.modificarAsistencia();
     }
+     //funcion asistencia de dia y mes determinado por el usuario
+    String auxMes = new String();
+    int auxDia = 0;
+    
+    public void asistenciaMesYDia()throws IOException{
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Selecciones su mes");
+        auxMes = lector.readLine();
+        System.out.println("Selecciones si día");
+        auxDia = Integer.parseInt(lector.readLine());
+        System.out.println("-----------------------------------");
+        System.out.println("Asistencia de Alumnos");
+        System.out.println("Día: "+auxDia+" y Mes: "+auxMes);
+        System.out.println("------------------------------------");
 }   

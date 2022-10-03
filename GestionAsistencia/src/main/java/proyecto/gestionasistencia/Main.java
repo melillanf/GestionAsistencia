@@ -79,6 +79,7 @@ public class Main {
                     //ver asistencia por dia y mes determinado
                     case 6:{
                         System.out.println("--Revisar asistencia");
+                        administracion.asistenciaMesYDia();
                         break;
                     }
                 }     
